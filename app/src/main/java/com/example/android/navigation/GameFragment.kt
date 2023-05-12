@@ -108,20 +108,16 @@ class GameFragment : Fragment() {
     }
 
 
-    // randomize the questions and set the first question
     private fun randomizeQuestions() {
         questions.shuffle()
         questionIndex = 0
         setQuestion()
     }
 
-    // Sets the question and randomizes the answers.  This only changes the data, not the UI.
-    // Calling invalidateAll on the FragmentGameBinding updates the data.
+
     private fun setQuestion() {
         currentQuestion = questions[questionIndex]
-        // randomize the answers into a copy of the array
         answers = currentQuestion.answers.toMutableList()
-        // and shuffle them
         answers.shuffle()
         (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_android_trivia_question, questionIndex + 1, numQuestions)
     }
