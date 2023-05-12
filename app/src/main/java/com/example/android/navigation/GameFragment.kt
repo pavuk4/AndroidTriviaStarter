@@ -31,9 +31,7 @@ class GameFragment : Fragment() {
             val text: String,
             val answers: List<String>)
 
-    // The first answer is the correct one.  We randomize the answers before showing the text.
-    // All questions must have four answers.  We'd want these to contain references to string
-    // resources so we could internationalize. (Or better yet, don't define the questions in code...)
+
     private val questions: MutableList<Question> = mutableListOf(
             Question(text = "What is Android Jetpack?",
                     answers = listOf("All of these", "Tools", "Documentation", "Libraries")),
